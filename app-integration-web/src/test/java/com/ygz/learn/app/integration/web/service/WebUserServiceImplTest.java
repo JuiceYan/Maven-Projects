@@ -1,5 +1,6 @@
 package com.ygz.learn.app.integration.web.service;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,13 +15,13 @@ import com.ygz.learn.app.interation.web.service.webuserservice.WebUserService;
 import junit.framework.Assert;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("config/applicationContext/application-context-junit.xml")
+@ContextConfiguration("classpath:config/applicationContext/application-context-junit.xml")
 @Transactional  
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)  
 public class WebUserServiceImplTest{
 	@Autowired
 	private WebUserService webUserService;
-	
+	@Test
 	public void testGetWebUser(){
 		WebGetUserInfoRequest webGetUserInfoRequest = new WebGetUserInfoRequest();
 		WebGetUserInfoResponse webGetUserInfoResponse = webUserService.webGetUserInfo(webGetUserInfoRequest);
