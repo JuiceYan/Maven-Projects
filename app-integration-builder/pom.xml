@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.learn.ygz</groupId>
+  <artifactId>app-integration-builder</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>app-integration-builder</name>
+  <url>http://maven.apache.org</url>
+
+  <modules>
+  	<module>../app-integration-parent</module>
+  	<module>../app-integration-common</module>
+  	<module>../app-integration-resource</module>
+  	<module>../app-integration-service</module>
+  	<module>../app-integration-web</module>
+  	<module>../app-integration-webapp</module>
+  </modules>
+</project>
