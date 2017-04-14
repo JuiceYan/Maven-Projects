@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>app-integration-web</artifactId>
+  <packaging>war</packaging>
+
+  <name>app-integration-web</name>
+  <url>http://maven.apache.org</url>
+  
+  <parent>
+	 	<groupId>com.learn.ygz</groupId>
+	 	<artifactId>app-integration-parent</artifactId>
+	 	<relativePath>../app-integration-parent</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+  </parent>	
+  <properties>
+	   <app.integration.version>0.0.1-SNAPSHOT</app.integration.version>
+  </properties>
+     <dependencies>
+  	<!-- 添加SSH依赖 -->  
+        <!-- 添加Hibernate依赖 -->  
+        <dependency>  
+            <groupId>org.hibernate</groupId>  
+            <artifactId>hibernate-core</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>c3p0</groupId>  
+            <artifactId>c3p0</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.hibernate</groupId>  
+            <artifactId>hibernate-annotations</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.hibernate</groupId>  
+            <artifactId>hibernate-commons-annotations</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.hibernate</groupId>  
+            <artifactId>hibernate-entitymanager</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>commons-dbcp</groupId>  
+            <artifactId>commons-dbcp</artifactId>  
+        </dependency>  
+  
+        <!-- 添加javassist -->  
+        <dependency>  
+            <groupId>javassist</groupId>  
+            <artifactId>javassist</artifactId>  
+        </dependency>  
+  
+        <!-- spring核心包 -->  
+        <!-- springframe start -->  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-core</artifactId>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-oxm</artifactId>  
+        </dependency>  
+        <dependency>  
+	    <groupId>org.springframework</groupId>  
+	    <artifactId>spring-orm</artifactId>  
+	</dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-tx</artifactId>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jdbc</artifactId>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-webmvc</artifactId>  
+        </dependency>  
+    
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-context-support</artifactId>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-aop</artifactId>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-test</artifactId>  
+        </dependency>  
+        <!-- springframe end -->  
+  
+        <dependency>  
+            <groupId>org.aspectj</groupId>  
+            <artifactId>aspectjrt</artifactId>  
+              
+        </dependency>  
+        <dependency>  
+            <groupId>org.aspectj</groupId>  
+            <artifactId>aspectjweaver</artifactId>  
+              
+        </dependency>  
+  
+        <!-- JSTL标签类 -->  
+        <dependency>  
+            <groupId>jstl</groupId>  
+            <artifactId>jstl</artifactId>  
+        </dependency>  
+  
+        <!-- 映入JSON -->  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-core</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-databind</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-annotations</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>mysql</groupId>  
+            <artifactId>mysql-connector-java</artifactId>  
+        </dependency>
+       
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+				 <!-- CXF Dependencies -->  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-transports-http</artifactId>  
+        </dependency>  
+        <!-- Jetty is needed if you're are not using the CXFServlet -->  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>  
+        </dependency>  
+        <!-- End of CXF Dependencies --> 
+		 <dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <scope>test</scope>
+   		</dependency>
+   		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
+			<scope>test</scope>
+		</dependency>
+   		<!-- local dependency -->
+		<dependency>  
+			<groupId>com.learn.ygz</groupId>
+			<artifactId>app-integration-common</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+		<dependency>  
+			<groupId>com.learn.ygz</groupId>
+			<artifactId>app-integration-resource</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+		<dependency>  
+			<groupId>com.learn.ygz</groupId>
+			<artifactId>app-integration-service</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+   		
+  </dependencies>
+	<build>
+		<plugins>
+			<!-- 配置加入jetty服务器，开发时我们一般使用jetty服务器 -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<!-- 设置扫描target/classes内部文件变化时间间隔 -->
+					<scanIntervalSeconds>2</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/app-integration-web</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
