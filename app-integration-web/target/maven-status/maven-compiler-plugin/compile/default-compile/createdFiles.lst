@@ -1,5 +1,3 @@
+com\ygz\learn\app\integration\web\utils\PublishAndCreateCelient.class
+com\ygz\learn\app\integration\web\service\WebUserServiceImpl.class
 com\ygz\learn\app\integration\web\control\HelloSpringmvcControl.class
-com\ygz\learn\app\integration\web\service\GetWebUserRespone.class
-com\ygz\learn\app\integration\web\service\WebUserService.class
-com\ygz\learn\app\integration\web\service\WebUser.class
-com\ygz\learn\app\integration\web\service\GetWebUserRequest.class

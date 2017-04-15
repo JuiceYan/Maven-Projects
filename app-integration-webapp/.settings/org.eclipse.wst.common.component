@@ -40,9 +40,6 @@
         <dependent-module archiveName="hibernate-3.2.1.ga.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/hibernate/hibernate/3.2.1.ga/hibernate-3.2.1.ga.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ehcache-1.2.3.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/net/sf/ehcache/ehcache/1.2.3/ehcache-1.2.3.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="asm-attrs-1.5.3.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
@@ -224,6 +221,15 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="app-integration-service-0.0.1-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/app-integration-service/app-integration-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="app-integration-web-0.0.1-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/app-integration-web/app-integration-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ehcache-core-2.5.7.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/net/sf/ehcache/ehcache-core/2.5.7/ehcache-core-2.5.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ehcache-2.7.0.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/net/sf/ehcache/ehcache/2.7.0/ehcache-2.7.0.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="cxf-rt-frontend-jaxws-2.2.3.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/cxf/cxf-rt-frontend-jaxws/2.2.3/cxf-rt-frontend-jaxws-2.2.3.jar">
