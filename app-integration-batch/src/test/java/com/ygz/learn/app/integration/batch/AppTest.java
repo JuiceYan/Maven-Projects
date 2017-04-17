@@ -1,4 +1,4 @@
-package com.learn.ygz.app.integration.service;
+package com.ygz.learn.app.integration.batch;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
