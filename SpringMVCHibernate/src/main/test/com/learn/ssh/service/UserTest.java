@@ -22,7 +22,7 @@ public class UserTest {
 		user.setAge(11);
 		user.setCreateDate(new Date());
 		user.setUserName("yy");
-		Serializable pk = userService.save(user);
+		Serializable pk = userService.saveUser(user);
 		System.out.println("PK:"+pk);
 	}
 }

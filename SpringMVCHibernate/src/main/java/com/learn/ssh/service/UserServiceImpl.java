@@ -1,9 +1,5 @@
 package com.learn.ssh.service;
 
-import java.io.Serializable;
-
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,14 +8,19 @@ import com.learn.ssh.dao.UserDao;
 import com.learn.ssh.entity.User;
 @Transactional
 @Service
-public class UserServiceImpl<T, PK extends Serializable> extends BaseServiceImpl<T, Serializable> implements UserService<T, Serializable>{
+public class UserServiceImpl implements UserService{
 	@Autowired
-	private UserDao<User, String> userDao;
+	private UserDao userDao;
 	public UserServiceImpl(){
-		super();
 		System.out.println("UserServiceImpl>>>>>>>>>>>>>>>>init");
-		
 	}
-	
+	public User getUser(String id) {
+		// TODO Auto-generated method stub
+		return userDao.getUser(id);
+	}
+	public String saveUser(User user) {
+		// TODO Auto-generated method stub
+		return userDao.saveUser(user);
+	}
 	
 }

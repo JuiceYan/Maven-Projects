@@ -1,7 +1,11 @@
 package com.learn.ssh.dao;
 
-import java.io.Serializable;
+import com.learn.ssh.entity.Student;
 
-public interface StudentDao<T, PK extends Serializable> extends BaseDao<T, Serializable>{  
+public interface StudentDao{
+
+	Student getStudent(String id);
+
+	String saveStudent(Student student);  
 
 }  

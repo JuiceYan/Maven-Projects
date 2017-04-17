@@ -11,183 +11,193 @@
 
  <properties>
    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   <!-- spring版本号 -->  
-   <spring.version>4.1.6.RELEASE</spring.version>  
-   <!-- hibernate版本号 -->  
-   <hibernate.core.version>3.3.0.GA</hibernate.core.version>
-   <hibernate.commons.annotations>3.3.0.ga</hibernate.commons.annotations>
-   <hibernate.annotations>3.5.5-Final</hibernate.annotations>
-   <hibernate.entitymanager>3.4.0.GA</hibernate.entitymanager>
-   <commons.dbcp>1.4</commons.dbcp>
-   <javassist.version>3.11.0.GA</javassist.version>
-   <aspectjrt.version>1.6.2</aspectjrt.version>
-   <jstl.version>1.2</jstl.version>
-   <jackson.version>2.6.0-rc1</jackson.version>
-   <mysql.version>5.1.35</mysql.version>
-   <c3p0.version>0.9.1.2</c3p0.version>
-   <javax.servlet.version>3.1.0</javax.servlet.version>
+   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+  	<!-- json -->
+  	<fastjson.version>1.1.26</fastjson.version>
+  	<jackson.version>1.9.11</jackson.version>
+  	<!-- data -->
+  	<hibernate.version>4.2.5.Final</hibernate.version>
+  	<hibernate.jpa.version>hibernate-jpa-2.0-api</hibernate.jpa.version>
+  	<druid.version>0.2.9</druid.version>
+  	<mysql.version>5.1.21</mysql.version>
+  	<!-- spring -->
+  	<spring.version>3.2.0.RELEASE</spring.version>
+  	<aspectjweaver.version>1.7.1</aspectjweaver.version>
+  	<fileupload.version>1.2.2</fileupload.version>
+  	<!-- log -->
+  	<log4j.version>1.2.17</log4j.version>
+  	<!-- servlet -->
+  	<jstl.version>1.2</jstl.version>
+  	<servlet.api.version>3.0-alpha-1</servlet.api.version>
+  	<jsp.api.version>2.2.1-b03</jsp.api.version>
    <cxf.version>2.2.3</cxf.version> 
    <cxf.codegen.plugin.version>2.2.3</cxf.codegen.plugin.version> 
    <jetty.plugin.version>8.1.16.v20140903</jetty.plugin.version>
+   <slf4j.version>1.6.1</slf4j.version>
+   <maven.resources.plugin>2.6</maven.resources.plugin>
+  	<!-- junit -->
+  	<junit.version>4.11</junit.version>
    <!-- log4j日志文件管理包版本 -->  
-   <slf4j.version>1.6.6</slf4j.version>  
-   <log4j.version>1.2.9</log4j.version>
-   <junit.version>3.8.1</junit.version>
-   <h2.version>1.4.190</h2.version>
+   <h2.version>1.4.194</h2.version>
  </properties>
 
  <dependencyManagement>
   <dependencies>
-  	<!-- 添加SSH依赖 -->  
-        <!-- 添加Hibernate依赖 -->  
+  		 <!-- junit -->  
+        <dependency>  
+            <groupId>junit</groupId>  
+            <artifactId>junit</artifactId>  
+            <version>${junit.version}</version>  
+            <scope>test</scope>  
+        </dependency>  
+          
+        <!-- servlet -->  
+        <dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>servlet-api</artifactId>  
+            <version>${servlet.api.version}</version>  
+            <scope>provided</scope>  
+        </dependency>  
+          
+        <!-- log4j -->  
+        <dependency>  
+            <groupId>log4j</groupId>  
+            <artifactId>log4j</artifactId>  
+            <version>${log4j.version}</version>  
+        </dependency>  
+          
+        <!-- jstl -->  
+        <dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>jstl</artifactId>  
+            <version>${jstl.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>javax.servlet.jsp</groupId>  
+            <artifactId>jsp-api</artifactId>  
+            <version>${jsp.api.version}</version>  
+            <scope>provided</scope>  
+        </dependency>  
+          
+        <!-- 文件上传 -->  
+        <dependency>  
+            <groupId>commons-fileupload</groupId>  
+            <artifactId>commons-fileupload</artifactId>  
+            <version>${fileupload.version}</version>  
+        </dependency>  
+          
+        <!-- fastJson json数组有关的 -->  
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>fastjson</artifactId>  
+            <version>${fastjson.version}</version>  
+        </dependency>  
+          
+        <!-- 使用 Jackson 把 Java 对象转换成 JSON 字串 -->  
+        <dependency>  
+            <groupId>org.codehaus.jackson</groupId>  
+            <artifactId>jackson-mapper-asl</artifactId>  
+            <version>${jackson.version}</version>  
+        </dependency>  
+          
+        <!-- mysql数据库驱动 -->  
+        <dependency>  
+            <groupId>mysql</groupId>  
+            <artifactId>mysql-connector-java</artifactId>  
+            <version>${mysql.version}</version>  
+        </dependency>  
+  
+        <!-- druid -->  
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>druid</artifactId>  
+            <version>${druid.version}</version>  
+        </dependency>  
+          
+        <!-- aspectjweaver.jar这是Spring AOP所要用到的包 -->  
+        <dependency>  
+            <groupId>org.aspectj</groupId>  
+            <artifactId>aspectjweaver</artifactId>  
+            <version>${aspectjweaver.version}</version>  
+        </dependency>  
+          
+        <!-- hibernate4 -->  
         <dependency>  
             <groupId>org.hibernate</groupId>  
             <artifactId>hibernate-core</artifactId>  
-            <version>${hibernate.core.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>c3p0</groupId>  
-            <artifactId>c3p0</artifactId>  
-            <version>${c3p0.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.hibernate</groupId>  
-            <artifactId>hibernate-annotations</artifactId>  
-            <version>${hibernate.annotations}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.hibernate</groupId>  
-            <artifactId>hibernate-commons-annotations</artifactId>  
-            <version>${hibernate.commons.annotations}</version>  
-        </dependency>  
+            <version>${hibernate.version}</version>  
+        </dependency>       
         <dependency>  
             <groupId>org.hibernate</groupId>  
             <artifactId>hibernate-entitymanager</artifactId>  
-            <version>${hibernate.entitymanager}</version>  
+            <version>${hibernate.version}</version>  
         </dependency>  
         <dependency>  
-            <groupId>commons-dbcp</groupId>  
-            <artifactId>commons-dbcp</artifactId>  
-            <version>${commons.dbcp}</version>  
-        </dependency>  
-  
-        <!-- 添加javassist -->  
+            <groupId>org.hibernate</groupId>  
+            <artifactId>hibernate-ehcache</artifactId>  
+            <version>${hibernate.version}</version> 
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+            	</exclusion>
+            </exclusions>
+        </dependency> 
         <dependency>  
-            <groupId>javassist</groupId>  
-            <artifactId>javassist</artifactId>  
-            <version>${javassist.version}</version>  
+            <groupId>org.hibernate.javax.persistence</groupId>  
+            <artifactId>${hibernate.jpa.version}</artifactId>  
+            <version>1.0.1.Final</version>  
         </dependency>  
-  
-        <!-- spring核心包 -->  
-        <!-- springframe start -->  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-core</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-web</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-oxm</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-        <dependency>  
-	    <groupId>org.springframework</groupId>  
-	    <artifactId>spring-orm</artifactId>  
-	    <version>${spring.version}</version>  
-	</dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-tx</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-jdbc</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
+          
+        <!-- spring mvc -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-webmvc</artifactId>  
             <version>${spring.version}</version>  
         </dependency>  
-    
+          
+        <!-- spring3 -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
-            <artifactId>spring-context-support</artifactId>  
+            <artifactId>spring-core</artifactId>  
             <version>${spring.version}</version>  
         </dependency>  
-  
         <dependency>  
             <groupId>org.springframework</groupId>  
-            <artifactId>spring-aop</artifactId>  
+            <artifactId>spring-context</artifactId>  
             <version>${spring.version}</version>  
         </dependency>  
-  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jdbc</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>       
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-beans</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-expression</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-orm</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-test</artifactId>  
             <version>${spring.version}</version>  
         </dependency>  
-        <!-- springframe end -->  
-  
-        <dependency>  
-            <groupId>org.aspectj</groupId>  
-            <artifactId>aspectjrt</artifactId>  
-            <version>${aspectjrt.version}</version>  
-              
-        </dependency>  
-        <dependency>  
-            <groupId>org.aspectj</groupId>  
-            <artifactId>aspectjweaver</artifactId>  
-            <version>${aspectjrt.version}</version>  
-              
-        </dependency>  
-  
-        <!-- JSTL标签类 -->  
-        <dependency>  
-            <groupId>jstl</groupId>  
-            <artifactId>jstl</artifactId>  
-            <version>${jstl.version}</version>  
-        </dependency>  
-  
-        <!-- 映入JSON -->  
-        <dependency>  
-            <groupId>com.fasterxml.jackson.core</groupId>  
-            <artifactId>jackson-core</artifactId>  
-            <version>${jackson.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>com.fasterxml.jackson.core</groupId>  
-            <artifactId>jackson-databind</artifactId>  
-            <version>${jackson.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>com.fasterxml.jackson.core</groupId>  
-            <artifactId>jackson-annotations</artifactId>  
-            <version>${jackson.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>mysql</groupId>  
-            <artifactId>mysql-connector-java</artifactId>  
-            <version>${mysql.version}</version>  
-        </dependency>
-        		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>${javax.servlet.version}</version>
-		    <scope>provided</scope>
-		</dependency>
+        
 		 <!-- CXF Dependencies -->  
         <dependency>  
             <groupId>org.apache.cxf</groupId>  
@@ -199,12 +209,18 @@
             <artifactId>cxf-rt-transports-http</artifactId>  
             <version>${cxf.version}</version>  
         </dependency>  
-        <!-- Jetty is needed if you're are not using the CXFServlet -->  
+         <!-- Jetty is needed if you're are not using the CXFServlet -->  
         <dependency>  
             <groupId>org.apache.cxf</groupId>  
             <artifactId>cxf-rt-transports-http-jetty</artifactId>  
             <version>${cxf.version}</version>  
-        </dependency>  
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-jdk14</artifactId>
+            	</exclusion>
+            </exclusions>
+        </dependency> 
         <!-- End of CXF Dependencies --> 
         <dependency>
 			<groupId>com.h2database</groupId>
@@ -213,13 +229,19 @@
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
 			<scope>test</scope>
 		</dependency>
+			<!-- conflict jar -->
+		<dependency>  	
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
         <dependency>
 		    <groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
 		    <version>${junit.version}</version>
 		    <scope>test</scope>
    		</dependency>
-  </dependencies>
+  	</dependencies>
  </dependencyManagement>
  <build>
  	<pluginManagement>
@@ -256,6 +278,11 @@
                 </execution>
             </executions> -->
         </plugin>
+        	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+       			<artifactId>maven-resources-plugin</artifactId>
+       			<version>${maven.resources.plugin}</version>
+			</plugin>
  		</plugins>
  	</pluginManagement>
  </build>

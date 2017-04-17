@@ -10,6 +10,8 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	<context:property-placeholder location="classpath:config/config.properties" />
 
 	<!-- 自动扫描dao和service包(自动注入) -->
-	<context:component-scan base-package="com.learn.ssh.dao,com.learn.ssh.service" />
+	<context:component-scan base-package="com.learn.ssh">
+		<context:exclude-filter type="regex" expression="com.learn.ssh.utils"/>
+	</context:component-scan>
 
 </beans>

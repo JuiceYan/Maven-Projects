@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-				  xmlns:tns="http://www.learn.ygz.com/app/interation/web/service/WebUserService" 
-				  xmlns:beans="http://www.learn.ygz.com/app/interation/web/service/beans/WebUserServiceBeans"
+				  xmlns:tns="http://www.ygz.learn.com/app/interation/web/service/WebUserService" 
+				  xmlns:beans="http://www.ygz.learn.com/app/interation/web/service/WebUserService"
 				  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-				  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebUserService" targetNamespace="http://www.learn.ygz.com/app/interation/web/service/WebUserService">
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebUserService" targetNamespace="http://www.ygz.learn.com/app/interation/web/service/WebUserService">
  	  
- 	  <wsdl:import location="./beans/WebUserServiceBeans.xsd" namespace="http://www.learn.ygz.com/app/interation/web/service/beans/WebUserServiceBeans"/>	
-	  <wsdl:message name="WebGetUserInfoRequest">
+ 	  <wsdl:import location="./beans/WebUserServiceBeans.xsd" namespace="http://www.ygz.learn.com/app/interation/web/service/WebUserService"/>	
+   	 <wsdl:message name="WebGetUserInfoRequest">
 	    <wsdl:part element="beans:WebGetUserInfoRequest" name="webGetUserInfoRequest"/>
 	  </wsdl:message>
 	  <wsdl:message name="WebGetUserInfoResponse">
@@ -15,26 +15,25 @@
 	  
 	  <wsdl:portType name="WebUserService">
 	    <wsdl:operation name="WebGetUserInfo">
-	      <wsdl:input message="tns:WebGetUserInfoRequest"/>
-	      <wsdl:output message="tns:WebGetUserInfoResponse"/>
+	      <wsdl:input message="tns:WebGetUserInfoRequest" name="webGetUserInfoRequest"/>
+	      <wsdl:output message="tns:WebGetUserInfoResponse" name="webGetUserInfoResponse"/>
 	    </wsdl:operation>
 	  </wsdl:portType>
 	  
 	  <wsdl:binding name="WebUserServiceSOAP" type="tns:WebUserService">
 	    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 	    <wsdl:operation name="WebGetUserInfo">
-	      <soap:operation soapAction="http://www.learn.ygz.com/app/interation/web/service/WebGetUserInfo"/>
-	      <wsdl:input>
+	      <soap:operation soapAction="http://www.ygz.learn.com/app/interation/web/service/WebUserService/WebUserService/WebGetUserInfo" style="document"/>
+	      <wsdl:input name="webGetUserInfoRequest">
 	        <soap:body use="literal"/>
 	      </wsdl:input>
-	      <wsdl:output>
-	        <soap:body use="literal"/>
+	      <wsdl:output name="webGetUserInfoResponse">
+	        <soap:body use="literal" />
 	      </wsdl:output>
 	    </wsdl:operation>
 	  </wsdl:binding>
-	  
 	  <wsdl:service name="WebUserService">
-	    <wsdl:port binding="tns:WebUserServiceSOAP" name="WebUserServiceSOAP">
+	    <wsdl:port binding="tns:WebUserServiceSOAP" name="WebUserServiceImplPort">
 	      <soap:address location="http://www.example.org/"/>
 	    </wsdl:port>
 	  </wsdl:service>

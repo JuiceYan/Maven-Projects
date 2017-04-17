@@ -1,9 +1,12 @@
 package com.learn.ssh.control;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,7 +15,7 @@ import com.learn.ssh.entity.User;
 import com.learn.ssh.service.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/{A}")
 public class UserControllor {
 	
 	public UserControllor(){
@@ -20,12 +23,16 @@ public class UserControllor {
 	}
 	
 	@Autowired
-	private UserService<User, String> userService;
+	private UserService userService;
 	
 	@ResponseBody
-	@RequestMapping(value = "hello", method = RequestMethod.POST)
-	public void addUser(HttpServletRequest request){
-		userService.save(null);
+	@RequestMapping(value = "/hello/{B}", method = RequestMethod.GET)
+	public void addUser(@PathVariable("A") String aName,@PathVariable("B") String bName){
+		User user = new User();
+		user.setCreateDate(new Date());
+		user.setUserName(bName);
+		String userId = userService.saveUser(user);
+		System.out.println(aName+"userId:"+userId);
 	}
 	
 }

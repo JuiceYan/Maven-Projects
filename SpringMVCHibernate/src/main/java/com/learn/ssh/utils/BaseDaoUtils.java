@@ -1,8 +1,8 @@
-package com.learn.ssh.dao;
+package com.learn.ssh.utils;
 
 import java.io.Serializable;
 
-public interface BaseDao<T, PK extends Serializable> {  
+public interface BaseDaoUtils<T, PK extends Serializable> {  
 	  
     /** 
      * 根据ID获取实体对象. 

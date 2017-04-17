@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			targetNamespace="http://www.learn.ygz.com/app/interation/web/service/common/CommonBeans"
-			xmlns:tsn="http://www.learn.ygz.com/app/interation/web/service/common/CommonBeans">
+			targetNamespace="http://www.ygz.learn.com/app/interation/web/service/common"
+			xmlns:tsn="http://www.ygz.learn.com/app/interation/web/service/common">
 
 	<xsd:complexType name="WebUser">
 		<xsd:sequence>

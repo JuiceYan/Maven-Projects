@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:CommonBeans="http://www.learn.ygz.com/app/interation/web/service/common/CommonBeans"
-			targetNamespace="http://www.learn.ygz.com/app/interation/web/service/beans/WebUserServiceBeans"
-			xmlns:tsn="http://www.learn.ygz.com/app/interation/web/service/beans/WebUserServiceBeans"
+			xmlns:CommonBeans="http://www.ygz.learn.com/app/interation/web/service/common"
+			targetNamespace="http://www.ygz.learn.com/app/interation/web/service/WebUserService"
+			xmlns:tsn="http://www.ygz.learn.com/app/interation/web/service/WebUserService"
 			elementFormDefault="qualified" >
-	<xsd:import schemaLocation="../common/CommonBeans.xsd" namespace="http://www.learn.ygz.com/app/interation/web/service/common/CommonBeans"/>
+	<xsd:import schemaLocation="../common/CommonBeans.xsd" namespace="http://www.ygz.learn.com/app/interation/web/service/common"/>
 	<xsd:element name="WebGetUserInfoRequest">
 		<xsd:complexType>
 			<xsd:sequence>

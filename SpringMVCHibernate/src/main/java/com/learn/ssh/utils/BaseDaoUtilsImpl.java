@@ -1,4 +1,4 @@
-package com.learn.ssh.dao;
+package com.learn.ssh.utils;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -8,14 +8,16 @@ import javax.annotation.Resource;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
-
-public class BaseDaoImpl<T, PK extends Serializable> implements BaseDao<T, PK>{
+@Component
+public class BaseDaoUtilsImpl<T, PK extends Serializable> implements BaseDaoUtils<T, PK>{
 	private Class<T> entityClass;
+	@Autowired
 	protected SessionFactory sessionFactory;
 	
-	public BaseDaoImpl() {
+	public BaseDaoUtilsImpl() {
 		System.out.println("BaseDaoImpl>>>>>>>>>>>>>>>>init");
 		this.entityClass = null;
 		Class<?> c = getClass();
@@ -26,11 +28,6 @@ public class BaseDaoImpl<T, PK extends Serializable> implements BaseDao<T, PK>{
         }
 	}
 	
-	@Resource
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
 	protected Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}

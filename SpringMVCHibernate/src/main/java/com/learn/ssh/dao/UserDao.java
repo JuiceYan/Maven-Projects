@@ -1,7 +1,11 @@
 package com.learn.ssh.dao;
 
-import java.io.Serializable;
+import com.learn.ssh.entity.User;
 
-public interface UserDao<T, PK extends Serializable> extends BaseDao<T, Serializable>{  
+public interface UserDao{
+
+	User getUser(String id);
+
+	String saveUser(User entity);  
 
 }  

@@ -15,6 +15,7 @@
   	<module>../app-integration-common</module>
   	<module>../app-integration-resource</module>
   	<module>../app-integration-service</module>
+  	<module>../app-integration-batch</module>
   	<module>../app-integration-web</module>
   	<module>../app-integration-webapp</module>
   </modules>

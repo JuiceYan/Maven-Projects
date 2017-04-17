@@ -1,3 +1,5 @@
 com\ygz\learn\app\integration\web\utils\PublishAndCreateCelient.class
+com\ygz\learn\app\integration\web\utils\WSClient.class
+com\ygz\learn\app\integration\web\utils\PublishAndCreateCelientUtils.class
 com\ygz\learn\app\integration\web\service\WebUserServiceImpl.class
-com\ygz\learn\app\integration\web\control\HelloSpringmvcControl.class
+com\ygz\learn\app\integration\web\utils\WSServer.class
