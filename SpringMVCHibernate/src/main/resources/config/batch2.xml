@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/batch 
+		http://www.springframework.org/schema/batch/spring-batch-3.0.xsd">
+    <import resource="./application.xml"/>
+     <bean id="SpringJobSchedulerFactoryBean"  
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+        <property name="triggers">  
+            <list>  
+                <ref bean="cronTrigger" />  
+            </list>  
+        </property>  
+    </bean>
+     <bean id="SpringQtzJobMethod"  
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject">  
+            <ref bean="SpringQtzJob" />  
+        </property>  
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->  
+            <value>execute</value>  
+        </property>  
+    </bean> 
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+		<property name="jobDetail" ref="SpringQtzJobMethod" />  
+		<property name="cronExpression" value="0/2 0 * * * ?" />  
+	</bean>
+	<!-- <bean id="jobDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="org.springframework.scheduling.quartz.QuartzJobBean" />
+		<property name="group" value="quartz-batch" />
+	<property name="jobDataAsMap">
+	  <map>
+		<entry key="jobName" value-ref="helloWorldJob" />
+		<entry key="jobRepository" value-ref="jobRepository" />
+	  </map>
+	</property>
+  </bean> -->
+    <batch:job id="helloWorldJob">
+        <batch:step id="step_hello" next="step_world">
+            <batch:tasklet ref="hello" transaction-manager="transactionManager"></batch:tasklet>
+        </batch:step>
+        <batch:step id="step_world">
+            <batch:tasklet ref="world" transaction-manager="transactionManager"></batch:tasklet>
+        </batch:step>
+    </batch:job>
+
+    <bean id="SpringQtzJob" class="com.ygz.learn.app.integration.batch.SpringQtzJobWriteMeathod">
+        <property name="message" value="Hello--- "></property>
+    </bean>
+    <bean id="hello" class="com.ygz.learn.app.integration.batch.WriteTasklet">
+        <property name="message" value="Hello--- "></property>
+    </bean>
+
+    <bean id="world" class="com.ygz.learn.app.integration.batch.WriteTasklet">
+        <property name="message" value=" World!"></property>
+    </bean>
+</beans>

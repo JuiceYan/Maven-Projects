@@ -34,6 +34,9 @@
    <cxf.codegen.plugin.version>2.2.3</cxf.codegen.plugin.version> 
    <jetty.plugin.version>8.1.16.v20140903</jetty.plugin.version>
    <slf4j.version>1.6.1</slf4j.version>
+   <spring.batch.core>3.0.6.RELEASE</spring.batch.core>  
+   <quartz.version>1.8.6</quartz.version>  
+   <spring.context.support>4.0.5.RELEASE</spring.context.support>
    <maven.resources.plugin>2.6</maven.resources.plugin>
   	<!-- junit -->
   	<junit.version>4.11</junit.version>
@@ -222,6 +225,23 @@
             </exclusions>
         </dependency> 
         <!-- End of CXF Dependencies --> 
+        <!-- batch job -->
+		<dependency>  
+	        <groupId>org.springframework.batch</groupId>  
+	        <artifactId>spring-batch-core</artifactId>  
+	        <version>${spring.batch.core}</version>  
+    	</dependency>
+    	<dependency>  
+	        <groupId>org.quartz-scheduler</groupId>  
+	        <artifactId>quartz</artifactId>  
+	        <version>${quartz.version}</version>  
+    	</dependency>
+    	<dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-context-support</artifactId>  
+	        <version>${spring.context.support}</version> 
+    	</dependency>
+    	
         <dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

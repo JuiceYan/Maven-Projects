@@ -141,43 +141,19 @@
             <groupId>org.springframework</groupId>  
             <artifactId>spring-test</artifactId>  
         </dependency>  
-		 <!-- CXF Dependencies -->  
-        <dependency>  
-            <groupId>org.apache.cxf</groupId>  
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.apache.cxf</groupId>  
-            <artifactId>cxf-rt-transports-http</artifactId>  
-        </dependency>  
-        <!-- Jetty is needed if you're are not using the CXFServlet -->  
-        <dependency>  
-            <groupId>org.apache.cxf</groupId>  
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>  
-            <exclusions>
-            	<exclusion>
-            		<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-jdk14</artifactId>
-            	</exclusion>
-            </exclusions>
-        </dependency>  
-        <!-- End of CXF Dependencies --> 
-        <dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
-			<scope>test</scope>
-		</dependency>
-        <dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <scope>test</scope>
-   		</dependency>
-		<!-- conflict jar -->
-		<dependency>  	
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
+		<!-- batch job -->
+		<dependency>  
+	        <groupId>org.springframework.batch</groupId>  
+	        <artifactId>spring-batch-core</artifactId>  
+    	</dependency>
+    	<dependency>  
+	        <groupId>org.quartz-scheduler</groupId>  
+	        <artifactId>quartz</artifactId>  
+    	</dependency>
+    	<dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-context-support</artifactId>  
+    	</dependency>
    		<!-- local dependency -->
 		<dependency>  
 			<groupId>com.learn.ygz</groupId>

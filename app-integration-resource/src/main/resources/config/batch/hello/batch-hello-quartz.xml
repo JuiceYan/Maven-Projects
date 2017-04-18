@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+     
+    <bean id="SpringJobSchedulerFactoryBean"  
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">  
+        <property name="triggers">  
+            <list>  
+                <ref bean="cronTrigger" />  
+            </list>  
+        </property>  
+    </bean>
+     <bean id="SpringQtzJobMethod"  
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject">  
+            <ref bean="SpringQtzJob" />  
+        </property>  
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->  
+            <value>execute</value>  
+        </property>  
+    </bean> 
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+		<property name="jobDetail" ref="SpringQtzJobMethod" />  
+		<property name="cronExpression" value="0/2 * * * * ?" />  
+		<!-- 
+		0/2 0 * * * ?  per 2 second of first minute every hour. 
+		0/2 * * * * ?  per 2 second of minute
+		 -->
+	</bean>
+
+</beans>

@@ -15,6 +15,9 @@
         <dependent-module archiveName="app-integration-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/app-integration-service/app-integration-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="app-integration-batch-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/app-integration-batch/app-integration-batch">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/app-integration-web/target/classes"/>
         <property name="context-root" value="app-integration-web"/>
     </wb-module>
