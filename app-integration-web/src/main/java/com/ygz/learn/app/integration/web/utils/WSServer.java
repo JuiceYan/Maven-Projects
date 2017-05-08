@@ -2,7 +2,7 @@ package com.ygz.learn.app.integration.web.utils;
 
 import javax.xml.ws.Endpoint;
 
-import com.ygz.learn.app.integration.web.service.WebUserServiceImpl;
+import com.ygz.learn.app.integration.web.WebServiceImpl.WebUserServiceImpl;
 
 public class WSServer {
 	

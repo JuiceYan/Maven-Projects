@@ -19,7 +19,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 <!-- 				<prop key="hibernate.current_session_context_class">thread</prop>
  --><!-- 				<prop key="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</prop> -->
 				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
-			</props>
+			</props>												
 		</property>
 		<!-- 自动扫描注解方式配置的hibernate类文件 -->
 		<property name="packagesToScan">
@@ -50,7 +50,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 			<tx:method name="repair" />
 			<tx:method name="deleteAndRepair" />
 
-			<tx:method name="get*" propagation="SUPPORTS" />
+			<tx:method name="get*" />
 			<tx:method name="find*" propagation="SUPPORTS" />
 			<tx:method name="load*" propagation="SUPPORTS" />
 			<tx:method name="search*" propagation="SUPPORTS" />
@@ -60,7 +60,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		<aop:pointcut id="transactionPointcut" expression="execution(* com.learn.ssh.service..*Impl.*(..))" />
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.learn.ygz.app.integration.service..*Impl.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
 	</aop:config>
 

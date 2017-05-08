@@ -11,11 +11,11 @@
 							http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
 							http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<!-- CXF -->
-	<!-- <import resource="classpath:META-INF/cxf/cxf.xml"/>
+	<import resource="classpath:META-INF/cxf/cxf.xml"/>
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
-	 -->
-<!-- 	<jaxws:endpoint implementor="com.ygz.learn.app.integration.web.service.WebUserServiceImpl" address="/WebUserService"></jaxws:endpoint>
- -->
+	<bean id = "webUserServiceImpl" class="com.ygz.learn.app.integration.web.WebServiceImpl.WebUserServiceImpl"/>
+	<jaxws:endpoint  implementor="#webUserServiceImpl" address="/WebUserService"/>
+ 
 <!--  	<jaxws:server serviceClass="com.learn.ygz.app.interation.web.service.webuserservice.WebUserService" address = "/ws/WebUserService11"></jaxws:server>
  --> </beans>

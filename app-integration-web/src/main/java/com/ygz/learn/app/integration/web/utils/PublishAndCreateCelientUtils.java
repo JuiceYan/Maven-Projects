@@ -7,11 +7,11 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import com.learn.ygz.app.interation.web.service.webuserservice.WebGetUserInfoRequest;
 import com.learn.ygz.app.interation.web.service.webuserservice.WebGetUserInfoResponse;
 import com.learn.ygz.app.interation.web.service.webuserservice.WebUserService;
-import com.ygz.learn.app.integration.web.service.WebUserServiceImpl;
+import com.ygz.learn.app.integration.web.WebServiceImpl.WebUserServiceImpl;
 
 public class PublishAndCreateCelientUtils {
 	
-	public static final String  WSDL_PRE = "http://localhost:8080/ws/";
+	public static final String  WSDL_PRE = "http://localhost:8083/ws/";
 
 	public static   void   publishWS(){
         System.out.println("web service start");
@@ -36,6 +36,8 @@ public class PublishAndCreateCelientUtils {
 		return hw;
 	 }
 	
+	public static void destoryWS(){
+	}
 	public static void main(String[] args) {
 		publishWS();
 	}

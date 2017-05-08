@@ -21,7 +21,7 @@ import com.ygz.learn.app.integration.web.utils.PublishAndCreateCelientUtils;
 @Transactional  
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)  
 public class WebUserServiceImplTest {
-	public static final String  WSDL_PRE = "http://localhost:8080/ws/";
+	public static final String  WSDL_PRE = "http://localhost:8083/ws/";
 	private WebUserService webUserService;
 
 	@Before

@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.learn.ygz.app.integration.service.entity.User;
 import com.learn.ygz.app.integration.service.utils.BaseDaoUtils;
-
 @Repository
 public class UserDaoImpl implements UserDao{
 	@Autowired

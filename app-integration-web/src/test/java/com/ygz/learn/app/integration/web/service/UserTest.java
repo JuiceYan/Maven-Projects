@@ -29,7 +29,7 @@ public class UserTest {
 	
 	@Before
 	public void setUp(){
-		Session session = sessionFactory.getCurrentSession();
+		Session session = sessionFactory.openSession();
 		
 		System.out.println("openSession:"+session+" sessionFactory:"+sessionFactory);
 	}
