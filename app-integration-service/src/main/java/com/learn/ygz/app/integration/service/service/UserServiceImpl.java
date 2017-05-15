@@ -16,11 +16,11 @@ public class UserServiceImpl implements UserService{
 	}
 	public User getUser(String id) {
 		// TODO Auto-generated method stub
-		return userDao.getUser(id);
+		return userDao.get(id);
 	}
 	public String saveUser(User user) {
 		// TODO Auto-generated method stub
-		return userDao.saveUser(user);
+		return userDao.save(user);
 	}
 	
 }

@@ -1,11 +1,7 @@
 package com.learn.ygz.app.integration.service.dao;
 
 import com.learn.ygz.app.integration.service.entity.User;
+import com.learn.ygz.app.integration.service.utils.BaseDaoUtils;
 
-public interface UserDao{
-
-	User getUser(String id);
-
-	String saveUser(User entity);  
-
+public interface UserDao extends BaseDaoUtils<User, String>{
 }  

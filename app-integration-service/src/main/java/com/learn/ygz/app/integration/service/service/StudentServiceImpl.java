@@ -16,10 +16,10 @@ public class StudentServiceImpl implements StudentService{
 	}
 	public Student getStudent(String id) {
 		// TODO Auto-generated method stub
-		return studentDao.getStudent(id);
+		return studentDao.get(id);
 	}
 	public String saveStudent(Student student) {
 		// TODO Auto-generated method stub
-		return studentDao.saveStudent(student);
+		return studentDao.save(student);
 	}
 }

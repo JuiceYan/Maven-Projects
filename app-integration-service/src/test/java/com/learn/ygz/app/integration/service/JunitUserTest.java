@@ -38,9 +38,10 @@ public class JunitUserTest {
 		user.setCreateDate(new Date());
 		user.setUserName("yy");
 		Serializable savePk = userService.saveUser(user);
+		System.out.println("savePk:"+savePk);
 		
 		String id = (String)savePk;
-		Serializable getPk = userService.getUser(id);
-		System.out.println("PK:"+getPk);
+		User user1 = userService.getUser(id);
+		System.out.println("PK:"+user1.getId());
 	}
 }

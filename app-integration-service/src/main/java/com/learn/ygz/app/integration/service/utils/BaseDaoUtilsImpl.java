@@ -16,27 +16,19 @@ public class BaseDaoUtilsImpl<T, PK extends Serializable> implements BaseDaoUtil
 	private Class<T> entityClass;
 	@Autowired
 	protected SessionFactory sessionFactory;
-//	  {
-//	        entityClass =(Class<T>)((ParameterizedType)BaseDaoUtils.class.getGenericSuperclass()).getActualTypeArguments()[0];
-//	           
-//	    }
-	public BaseDaoUtilsImpl() {
-//		System.out.println("BaseDaoImpl>>>>>>>>>>>>>>>>init");
-//		this.entityClass = null;
-//		Class<?> c = getClass();
-//		Type type = c.getGenericSuperclass();
-//		if (type instanceof ParameterizedType) {
-//            Type[] parameterizedType = ((ParameterizedType) type).getActualTypeArguments();
-//            this.entityClass = (Class<T>) parameterizedType[0].getClass();
-//        }
+	  {
 		this.entityClass = null;
 		Class<?> c = getClass();
 		Type type = c.getGenericSuperclass();
 		if (type instanceof ParameterizedType) {
             Type[] parameterizedType = ((ParameterizedType) type).getActualTypeArguments();
-            this.entityClass = (Class<T>) parameterizedType[0].getClass();
+            System.out.println(parameterizedType[0]);
+            this.entityClass = (Class<T>) parameterizedType[0];
         }
-		
+	  }
+	@SuppressWarnings("unchecked")
+	public BaseDaoUtilsImpl() {			
+		System.out.println("BaseDaoImpl>>>>>>>>>>>>>>>>init");
 	}
 	
 	protected Session getSession() {
