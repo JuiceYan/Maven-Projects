@@ -13,7 +13,7 @@ import com.learn.ygz.app.integration.service.entity.User;
 import com.learn.ygz.app.integration.service.service.UserService;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:config/applicationContext/application-context-junit.xml"})
+@ContextConfiguration(locations = {"classpath:config/applicationContext/application-context-service-junit.xml"})
 public class JunitUserTest {
 	@Autowired
 	UserService userService;

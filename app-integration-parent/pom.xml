@@ -28,6 +28,7 @@
   	<log4j.version>1.2.17</log4j.version>
   	<!-- servlet -->
   	<jstl.version>1.2</jstl.version>
+  	<geronimo-servlet.version>1.2</geronimo-servlet.version>
   	<servlet.api.version>3.0-alpha-1</servlet.api.version>
   	<jsp.api.version>2.2.1-b03</jsp.api.version>
    <cxf.version>2.2.3</cxf.version> 
@@ -73,12 +74,19 @@
         <dependency>  
             <groupId>javax.servlet</groupId>  
             <artifactId>jstl</artifactId>  
-            <version>${jstl.version}</version>  
+            <version>${jstl.version}</version>
+            <scope>provided</scope>  
         </dependency>  
         <dependency>  
             <groupId>javax.servlet.jsp</groupId>  
             <artifactId>jsp-api</artifactId>  
             <version>${jsp.api.version}</version>  
+            <scope>provided</scope>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_2.5_spec</artifactId> 
+            <version>${geronimo-servlet.version}</version>  
             <scope>provided</scope>  
         </dependency>  
           
@@ -221,6 +229,10 @@
             	<exclusion>
             		<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-jdk14</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-servlet_2.5_spec</artifactId>
             	</exclusion>
             </exclusions>
         </dependency> 

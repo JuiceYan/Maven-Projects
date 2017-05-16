@@ -11,8 +11,8 @@
 	<context:property-placeholder location="classpath:config/applicationContext/application.properties" />
 	
 	<import resource="../applicationContext/spring/spring-hibernate.xml"/>
-	<import resource="../applicationContext/spring/spring-cxf.xml"/>
-	<import resource="../applicationContext/spring/spring.xml"/>
-	<import resource="../applicationContext/spring/spring-batch.xml"/>
-	<import resource="../dataSource/data-source.xml"/>
+<!-- 	<import resource="../applicationContext/spring/spring-cxf.xml"/>
+ -->	<import resource="../applicationContext/spring/spring.xml"/>
+<!-- 	<import resource="../applicationContext/spring/spring-batch.xml"/>
+ -->	<import resource="../dataSource/data-source.xml"/>
 </beans>
